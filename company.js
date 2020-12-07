@@ -78,9 +78,22 @@ connection.connect(function(err) {
           connection.end();
         }
       });
-
   }
 
   function updateBegin(){
+    inquirer
+    .prompt({
+      name: "qUpdate",
+      type: "list",
+      message: "Would you like to update an employee's role?",
+      choices: ["YES", "NO"]
+
+      }).then(function(answer) {
+        if (answer.qUpdate === "YES") {
+          updateRole();
+        } else if(answer.qUpdate === "NO") {
+          connection.end();
+        }
+      });
 
   }
