@@ -21,16 +21,16 @@ connection.connect(function(err) {
         name: "q1",
         type: "list",
         message: "Would you like to ADD, VIEW, or UPDATE a department, role, or employee?",
-        choices: ["ADD", "VIEW", "UPDATE"]
+        choices: ["ADD", "VIEW", "UPDATE", "EXIT"]
 
         }).then(function(answer) {
-          if (answer.q1 === "ADD") {
+          if (answer.q1 === "ADD"){
             addBegin();
-          } else if(answer.q1 === "VIEW") {
+          } else if(answer.q1 === "VIEW"){
             viewBegin();
-          } else if(answer.q1 === "UPDATE") {
+          } else if(answer.q1 === "UPDATE"){
             updateBegin();            
-          } else{
+          } else if(answer.q1 ==="EXIT"){
             connection.end();
           }
         });
@@ -38,62 +38,91 @@ connection.connect(function(err) {
 
   function addBegin(){
     inquirer
-    .prompt({
-      name: "qAdd",
-      type: "list",
-      message: "Would you like to add a department, role, or employee?",
-      choices: ["DEPARTMENT", "ROLE", "EMPLOYEE"]
+      .prompt({
+        name: "qAdd",
+        type: "list",
+        message: "Would you like to add a department, role, or employee?",
+        choices: ["DEPARTMENT", "ROLE", "EMPLOYEE", "BACK"]
 
-      }).then(function(answer) {
-        if (answer.qAdd === "DEPARTMENT") {
-          addDepartment();
-        } else if(answer.qAdd === "ROLE") {
-          addRole();
-        } else if(answer.qAdd === "EMPLOYEE") {
-          addEmployee();            
-        } else{
-          connection.end();
-        }
+       }).then(function(answer) {
+          if (answer.qAdd === "DEPARTMENT"){
+            addDepartment();
+          } else if(answer.qAdd === "ROLE"){
+            addRole();
+          } else if(answer.qAdd === "EMPLOYEE"){
+            addEmployee();            
+          } else if(answer.qAdd === "BACK"){
+            start();
+          }
       });
   }
+
+  // function addDepartment(){
+
+  // }
+  // function addRole(){
+
+  // }
+  // function addEmployee(){
+
+  // }
 
   function viewBegin(){
     inquirer
-    .prompt({
-      name: "qView",
-      type: "list",
-      message: "Would you like to view a department, role, employee, or all?",
-      choices: ["DEPARTMENT", "ROLE", "EMPLOYEE", "ALL"]
+      .prompt({
+        name: "qView",
+        type: "list",
+        message: "Would you like to view a department, role, employee, or all?",
+        choices: ["DEPARTMENT", "ROLE", "EMPLOYEE", "ALL", "BACK"]
 
       }).then(function(answer) {
-        if (answer.qView === "DEPARTMENT") {
+        if (answer.qView === "DEPARTMENT"){
           viewDepartment();
-        } else if(answer.qView === "ROLE") {
+        } else if(answer.qView === "ROLE"){
           viewRole();
-        } else if(answer.qView === "EMPLOYEE") {
+        } else if(answer.qView === "EMPLOYEE"){
           viewEmployee(); 
-        } else if(answer.qView === "ALL") {
+        } else if(answer.qView === "ALL"){
           viewAll();             
-        } else{
-          connection.end();
+        } else if(answer.qView === "BACK"){
+          start();
         }
       });
   }
 
+  // function viewDepartment(){
+
+  // }
+  
+  // function viewRole(){
+
+  // }
+
+  // function viewEmployee(){
+
+  // }
+
+  // function viewAll(){
+
+  // }
+
   function updateBegin(){
     inquirer
-    .prompt({
-      name: "qUpdate",
-      type: "list",
-      message: "Would you like to update an employee's role?",
-      choices: ["YES", "NO"]
+      .prompt({
+        name: "qUpdate",
+        type: "list",
+        message: "Would you like to update an employee's role?",
+        choices: ["YES", "NO"]
 
       }).then(function(answer) {
         if (answer.qUpdate === "YES") {
           updateRole();
         } else if(answer.qUpdate === "NO") {
-          connection.end();
+          start();
         }
       });
-
   }
+
+  // function updateRole(){
+    
+  // }
