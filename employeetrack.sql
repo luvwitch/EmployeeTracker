@@ -36,6 +36,8 @@ SELECT * FROM department;
 SELECT * FROM role;
 SELECT * FROM employee;
 
+--- JOINS ---
+
 SELECT ---.---, ---.---
 FROM ---
 INNER JOIN --- ON ---.--- = ---.---;
