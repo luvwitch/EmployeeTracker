@@ -123,6 +123,25 @@ connection.connect(function(err) {
       });
   }
 
-  // function updateRole(){
-    
-  // }
+  function updateRole(){
+    viewEmployee();
+    inquirer
+      .prompt({
+        name: 'empUp',
+        type: 'list',
+        message: "Which employee would you like to update?"
+        choices: [
+          CURRENT EMPLOYEE ARRAY
+        ]
+      }).then(function(answer){
+        const employee = answer.empUp
+        inquirer
+          .prompt({
+            name: 'newrole',
+            type: 'input',
+            message: "What would you like to change their role to?"
+          }).then(function(response){
+            employee.role = response.newrole
+          })
+      }    
+  }
