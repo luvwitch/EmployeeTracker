@@ -42,7 +42,7 @@ Here is a video demoing the full use of the application:
 
 https://drive.google.com/file/d/1uYG6cA4SkIcEk_zrHk9OAY4rFnAkD4tj/view
 
-[![Watch the video](https://github.com/luvwitch/EmployeeTracker/assets/start.png?raw=true)](https://drive.google.com/file/d/1uYG6cA4SkIcEk_zrHk9OAY4rFnAkD4tj/view)
+[![Watch the video](https://github.com/luvwitch/EmployeeTracker/blob/main/assets/start.png)](https://drive.google.com/file/d/1uYG6cA4SkIcEk_zrHk9OAY4rFnAkD4tj/view)
 
 ## Contact
 
