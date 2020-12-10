@@ -174,7 +174,7 @@ function addRole(){
 
 
   function addEmployee(){
-    connection.query("SELECT role.name, role.id FROM role", function(err, results) {
+    connection.query("SELECT * FROM employee", function(err, results) {
       if (err) throw err;    
     inquirer
       .prompt([
